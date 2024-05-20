@@ -1,0 +1,64 @@
+.progressContainer {
+    width: 260px;
+    height: 250px;
+    background-color: transparent;
+    position: relative;
+  }
+  .outerBar {
+    width: 260px;
+    height: 136px;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .innerBar {
+    background-color: transparent;
+    position: relative;
+    z-index: 500;
+    background-color: transparent;
+    width: 223px;
+    height: 116px;
+    border-radius: 52% 50% 0 0 / 100% 100% 0 0;
+  
+    display: flex;
+    justify-content: center;
+  }
+  .progressContent {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .svg {
+    position: absolute;
+    width: 260px;
+    height: 190px;
+    transform: rotate(0deg);
+    top: -36px;
+    left: 0;
+  }
+  
+  .path {
+    fill: none;
+    stroke-width: 20px;
+  }
+  .progressTitle {
+    margin: 10px 0;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: center;
+    color: #b0b0b0;
+  }
+  .progressSubtitle {
+    padding: 0;
+    margin: 10px 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #b0b0b0;
+  }
+  

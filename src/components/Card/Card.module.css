@@ -1,0 +1,52 @@
+.cardContainer {
+    padding: 8px 25px 15px 25px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .hDefault {
+    height: 17.5em;
+  }
+  .hFitContent {
+    height: fit-content;
+  }
+  .smallHeight {
+    height: 11.25em;
+  }
+  .mediumHeight {
+    height: 23.75em;
+  }
+  .largeHeight {
+    height: 37.5em;
+  }
+  .extraLargeHeight {
+    height: 49.5em;
+  }
+  .wDefault {
+    width: 32.5em;
+  }
+  .wFill {
+    width: 100%;
+  }
+  .hFill {
+    height: 100%;
+  }
+  .smallWidth {
+    width: 19.375em;
+  }
+  .mediumWidth {
+    width: 29.875em;
+  }
+  .largeWidth {
+    width: 43em;
+  }
+  .wFitContent {
+    width: fit-content;
+  }
+  .extraLarge {
+    width: 58em;
+  }
+  .doubleExtraLarge {
+    width: 68em;
+  }
+  
