@@ -11,7 +11,7 @@ const App = (props: Props) => {
     <Card>
         <h2>hi</h2>
     </Card>
-    <ProgressMeter progressSubtitles={["Low","Medium"]}/>
+    <ProgressMeter  progressSubtitles={["Result Improvement","Result Improvement"]}/>
     </>
 
   )

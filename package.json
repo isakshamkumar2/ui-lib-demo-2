@@ -1,12 +1,12 @@
 {
   "name": "@isakshamkumar2/ui-lib-demo-2",
-  "version": "0.0.16",
+  "version": "0.0.23",
   "description": "UI Library",
   "main": "dist/bundle.js",
   "module": "dist/bundle.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Earror: no test specified\" && exit 1",
     "build": "webpack",
     "start": "react-scripts start"
   },
@@ -38,6 +38,7 @@
     "path": "^0.12.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-scripts": "^5.0.1",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",
     "tslib": "^2.6.2",
@@ -49,8 +50,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "react-scripts": "^5.0.1"
+    "@emotion/styled": "^11.11.5"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",

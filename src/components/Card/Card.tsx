@@ -23,6 +23,7 @@ export enum CardWidth {
   FitContent = 'wFitContent',
 }
 
+
 export type CardProps = {
   children?: JSX.Element | JSX.Element[];
   height?: CardHeight;
