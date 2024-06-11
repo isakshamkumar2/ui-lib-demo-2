@@ -8,18 +8,19 @@ export interface ProgressMeterProps {
   progressSubtitles: [string, string] | [string, string, string];
   invertColor?: boolean;
   isNegative?: boolean;
-  size?: ProgreeeMeterSize;
+  size?: 'default' | 'large';
 }
-export enum ProgreeeMeterSize{
-  DEFAULT="default",
-  LARGE="large"
+
+export enum ProgressMeterSize {
+  DEFAULT = 'default',
+  LARGE = 'large',
 }
+
 const ProgressMeter: React.FC<ProgressMeterProps> = ({
   progress = 70,
   progressSubtitles,
   isNegative = false,
-  size=ProgreeeMeterSize.DEFAULT
-
+  size = ProgressMeterSize.DEFAULT,
 }) => {
   const progressTitles = ['None', 'Medium', 'High'];
   const strokeDashoffset = progress ? 380 - (progress / 100) * 380 : 380;
@@ -40,16 +41,16 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
   `;
 
   return (
-    <div className={`${Styles.progressContainer}${Styles[size]}`}>
-      <div className={Styles.outerBar}>
-        <div className={Styles.innerBar}>
+    <div className={`${Styles.progressContainer} ${Styles[size]}`}>
+      <div className={`${Styles.outerBar} ${Styles[size]}`}>
+        <div className={`${Styles.innerBar} ${Styles[size]}`}>
           <div className={Styles.progressContent}>
-            <ProgressContainer className={`${Styles.progressTitle} ${Styles.small}`}>
+            <ProgressContainer className={`${Styles.progressTitle} ${Styles[size]}`}>
               {progress >= 0 && progress < 30 && progressTitles[0]}
               {progress >= 30 && progress < 60 && progressTitles[1]}
               {progress >= 60 && progressTitles[2]}
             </ProgressContainer>
-            <ProgressSubtitles className={`${Styles.progressSubtitle} ${Styles.small}`}>
+            <ProgressSubtitles className={`${Styles.progressSubtitle} ${Styles[size]}`}>
               {progress >= 0 && progress < 30 && progressSubtitles[0]}
               {progress >= 30 && progress < 60 && progressSubtitles[1]}
               {progress >= 60 && (progressSubtitles[2] ? progressSubtitles[2] : progressSubtitles[1])}
@@ -58,7 +59,7 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
         </div>
       </div>
       {/* White background "D" shaped progress bar */}
-      <svg className={Styles.svg} viewBox="0 0 260 160">
+      <svg className={`${Styles.svg} ${Styles[size]}`} viewBox="0 0 260 160">
         <defs>
           <linearGradient id="white-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" style={{ stopColor: '#f2f2f2', stopOpacity: 1 }} />
@@ -81,10 +82,10 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
         {/* White background "D" shaped progress bar */}
         <path
           data-testid="white-path"
-          className={`${Styles.path} ${Styles.whitePath}`} // Add whitePath class
+          className={`${Styles.path} ${Styles.whitePath} ${Styles[size]}`}
           d="M10 150 A 120 120 0 0 1 250 150"
           fill="none"
-          stroke="url(#white-gradient)" // Use white gradient
+          stroke="url(#white-gradient)"
           strokeLinecap="round"
           strokeWidth="20"
           strokeDasharray="380"
@@ -92,10 +93,10 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
         {/* Actual progress bar with gradient */}
         <path
           data-testid="actual-path"
-          className={Styles.path}
+          className={`${Styles.path} ${Styles[size]}`}
           d="M10 150 A 120 120 0 0 1 250 150"
           fill="none"
-          stroke={`url(#${gradientId})`} // Use the actual progress gradient
+          stroke={`url(#${gradientId})`}
           strokeLinecap="round"
           strokeWidth="20"
           strokeDasharray="380"

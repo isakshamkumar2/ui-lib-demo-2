@@ -4,9 +4,9 @@ export interface ProgressMeterProps {
     progressSubtitles: [string, string] | [string, string, string];
     invertColor?: boolean;
     isNegative?: boolean;
-    size?: ProgreeeMeterSize;
+    size?: 'default' | 'large';
 }
-export declare enum ProgreeeMeterSize {
+export declare enum ProgressMeterSize {
     DEFAULT = "default",
     LARGE = "large"
 }
