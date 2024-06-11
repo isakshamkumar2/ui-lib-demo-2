@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import themes from '../../themes/theme';
 import styled from '@emotion/styled';
 import { ThemeType } from '../../types';
-import Styles from './Card.module.css'
+import Styles from './Card.module.css';
+
+/**
+ * Enum for predefined card heights.
+ */
 export enum CardHeight {
   Default = 'hDefault',
   sm = 'smallHeight',
@@ -12,6 +16,10 @@ export enum CardHeight {
   FitContent = 'hFitContent',
   Fill = 'hFill',
 }
+
+/**
+ * Enum for predefined card widths.
+ */
 export enum CardWidth {
   Default = 'wDefault',
   sm = 'smallWidth',
@@ -23,20 +31,36 @@ export enum CardWidth {
   FitContent = 'wFitContent',
 }
 
-
+/**
+ * Props for the Card component.
+ */
 export type CardProps = {
+  /** Child elements to be rendered inside the card. */
   children?: JSX.Element | JSX.Element[];
+  /** Height of the card. */
   height?: CardHeight;
+  /** Width of the card. */
   width?: CardWidth;
+  /** Theme to be applied to the card. */
   theme?: ThemeType;
+  /** If true, the card will have an outline. */
   outline?: boolean;
+  /** Additional styles to be applied to the card. */
+  style?: CSSProperties;
 };
 
+/**
+ * A customizable Card component for displaying content and actions.
+ * 
+ * @param {CardProps} props - The properties for the Card component.
+ * @returns {JSX.Element} The rendered Card component.
+ */
 const Card: React.FC<CardProps> = ({
   height = CardHeight.Default,
   width = CardWidth.Default,
   theme = ThemeType.DARK,
   outline = false,
+  style = {},
   children,
 }) => {
   const CardContainer = styled.div`
@@ -54,13 +78,16 @@ const Card: React.FC<CardProps> = ({
       transition: box-shadow 0.2s ease-in-out;
     }
   `;
+  
   const CardContainerClasses = `${Styles['cardContainer']} ${Styles[height]} ${Styles[width]}`;
+  
   return (
     <CardContainer
       role="tab"
       theme={theme}
       tabIndex={0}
       className={CardContainerClasses}
+      style={style} 
     >
       {children}
     </CardContainer>

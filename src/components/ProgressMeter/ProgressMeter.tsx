@@ -1,4 +1,3 @@
-// ProgressMeter.jsx
 import React from 'react';
 import Styles from './ProgressMeter.module.css';
 import styled from '@emotion/styled';
@@ -9,12 +8,18 @@ export interface ProgressMeterProps {
   progressSubtitles: [string, string] | [string, string, string];
   invertColor?: boolean;
   isNegative?: boolean;
+  size?: ProgreeeMeterSize;
 }
-
+export enum ProgreeeMeterSize{
+  DEFAULT="default",
+  LARGE="large"
+}
 const ProgressMeter: React.FC<ProgressMeterProps> = ({
   progress = 70,
   progressSubtitles,
   isNegative = false,
+  size=ProgreeeMeterSize.DEFAULT
+
 }) => {
   const progressTitles = ['None', 'Medium', 'High'];
   const strokeDashoffset = progress ? 380 - (progress / 100) * 380 : 380;
@@ -35,7 +40,7 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
   `;
 
   return (
-    <div className={`${Styles.progressContainer} ${Styles.small}`}>
+    <div className={`${Styles.progressContainer}${Styles[size]}`}>
       <div className={Styles.outerBar}>
         <div className={Styles.innerBar}>
           <div className={Styles.progressContent}>
@@ -52,8 +57,14 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
           </div>
         </div>
       </div>
+      {/* White background "D" shaped progress bar */}
       <svg className={Styles.svg} viewBox="0 0 260 160">
         <defs>
+          <linearGradient id="white-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#f2f2f2', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#f2f2f2', stopOpacity: 1 }} />
+          </linearGradient>
+          {/* Add the actual progress gradients */}
           <linearGradient id="gradient1" x1="0%" y1="0%" x2="40%" y2="0%">
             <stop offset="0%" style={{ stopColor: '#BCDBFF', stopOpacity: 1 }} />
             <stop offset="100%" style={{ stopColor: '#4597F7', stopOpacity: 1 }} />
@@ -67,12 +78,24 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
             <stop offset="100%" style={{ stopColor: '#2FA125', stopOpacity: 1 }} />
           </linearGradient>
         </defs>
+        {/* White background "D" shaped progress bar */}
         <path
-          data-testid="path"
+          data-testid="white-path"
+          className={`${Styles.path} ${Styles.whitePath}`} // Add whitePath class
+          d="M10 150 A 120 120 0 0 1 250 150"
+          fill="none"
+          stroke="url(#white-gradient)" // Use white gradient
+          strokeLinecap="round"
+          strokeWidth="20"
+          strokeDasharray="380"
+        />
+        {/* Actual progress bar with gradient */}
+        <path
+          data-testid="actual-path"
           className={Styles.path}
           d="M10 150 A 120 120 0 0 1 250 150"
           fill="none"
-          stroke={`url(#${gradientId})`}
+          stroke={`url(#${gradientId})`} // Use the actual progress gradient
           strokeLinecap="round"
           strokeWidth="20"
           strokeDasharray="380"
