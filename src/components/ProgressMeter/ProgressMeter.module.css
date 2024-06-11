@@ -71,23 +71,23 @@
 }
 
 .largeProgressContainer{
-  width: 109px;
-  height: 100px;
+  width: 119px;
+  height: 116px;
   /* border: 2px solid green; */
 }
 .largeOuterBar{
-  width: 100px;
-  height: 60px;
+  width: 113px;
+  height: 80px;
   /* border: 2px solid red; */
 }
 .largeInnerBar{
-  width: 80px;
-  height: 50px;
+  width: 90px;
+  height: 70px;
 }
 
 .largeSvg{
-  width: 100px;
-  height: 90px;
+  width: 113px;
+  height: 70px;
 }
 
 .largePath{
@@ -95,11 +95,11 @@
 }
 
 .largeProgressTitle {
-  font-size: 16px;
-  margin-top: 7rem;
+  font-size: 17px;
+  margin-top: 5.3rem;
 }
 
 .largeProgressSubtitle {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
