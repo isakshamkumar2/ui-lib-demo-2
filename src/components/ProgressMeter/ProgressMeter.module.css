@@ -68,14 +68,6 @@
   text-align: center;
 }
 
-/* Large size */
-/* .large{
-  border: 2px solid red;
-} */
-/* .large .progressContainer {
-
-  border: 2px solid green;
-} */
 .largeProgressContainer{
   width: 109px;
   height: 100px;
@@ -88,33 +80,22 @@
   width: 80px;
   height: 50px;
 }
-/* .large .outerBar {
 
-} */
-
-/* .large .innerBar {
-
-} */
-
-/* .large .svg {
-  
-} */
 .largeSvg{
   width: 100px;
   height: 90px;
 }
 
-/* .large .path {
-  stroke-width: 30px;
-} */
 .largePath{
-  stroke-width: 30px;
+  stroke-width: 22px;
 }
 
-.large .progressTitle {
-  font-size: 15px;
+.largeProgressTitle {
+  font-size: 16px;
+  margin-top: 7rem;
 }
 
-.large .progressSubtitle {
-  font-size: 12px;
+.largeProgressSubtitle {
+  font-size: 13px;
+  font-weight: 500;
 }

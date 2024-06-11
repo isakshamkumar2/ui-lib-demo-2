@@ -101,8 +101,8 @@ const gridStyle = {
               </div>
               <div style={{display:'flex',flexDirection:'column'}}>
 
-              <ProgressMeter progress={workFlow.progressMeterOneDetails.progress} progressSubtitles={workFlow.progressMeterOneDetails.progressMeterOneSubtitles as [string, string]} />
-              <ProgressMeter progress={workFlow.progressMeterTwoDetails.progress} progressSubtitles={workFlow.progressMeterTwoDetails.progressMeterTwoSubtitles as [string, string]} />
+              <ProgressMeter size='large' progress={workFlow.progressMeterOneDetails.progress} progressSubtitles={workFlow.progressMeterOneDetails.progressMeterOneSubtitles as [string, string]} />
+              <ProgressMeter size='large' progress={workFlow.progressMeterTwoDetails.progress} progressSubtitles={workFlow.progressMeterTwoDetails.progressMeterTwoSubtitles as [string, string]} />
               </div>
             </div>
           </Card>
