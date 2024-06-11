@@ -41,16 +41,16 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
   `;
 
   return (
-    <div className={`${Styles.progressContainer} ${Styles[size]}`}>
-      <div className={`${Styles.outerBar} ${Styles[size]}`}>
-        <div className={`${Styles.innerBar} ${Styles[size]}`}>
+    <div className={`${Styles.progressContainer} ${size === 'large' ? Styles.large : ''}`}>
+      <div className={`${Styles.outerBar} ${size === 'large' ? Styles.large : ''}`}>
+        <div className={`${Styles.innerBar} ${size === 'large' ? Styles.large : ''}`}>
           <div className={Styles.progressContent}>
-            <ProgressContainer className={`${Styles.progressTitle} ${Styles[size]}`}>
+            <ProgressContainer className={`${Styles.progressTitle} ${size === 'large' ? Styles.large : ''}`}>
               {progress >= 0 && progress < 30 && progressTitles[0]}
               {progress >= 30 && progress < 60 && progressTitles[1]}
               {progress >= 60 && progressTitles[2]}
             </ProgressContainer>
-            <ProgressSubtitles className={`${Styles.progressSubtitle} ${Styles[size]}`}>
+            <ProgressSubtitles className={`${Styles.progressSubtitle} ${size === 'large' ? Styles.large : ''}`}>
               {progress >= 0 && progress < 30 && progressSubtitles[0]}
               {progress >= 30 && progress < 60 && progressSubtitles[1]}
               {progress >= 60 && (progressSubtitles[2] ? progressSubtitles[2] : progressSubtitles[1])}
@@ -59,7 +59,7 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
         </div>
       </div>
       {/* White background "D" shaped progress bar */}
-      <svg className={`${Styles.svg} ${Styles[size]}`} viewBox="0 0 260 160">
+      <svg className={`${Styles.svg} ${size === 'large' ? Styles.large : ''}`} viewBox="0 0 260 160">
         <defs>
           <linearGradient id="white-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" style={{ stopColor: '#f2f2f2', stopOpacity: 1 }} />
@@ -82,7 +82,7 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
         {/* White background "D" shaped progress bar */}
         <path
           data-testid="white-path"
-          className={`${Styles.path} ${Styles.whitePath} ${Styles[size]}`}
+          className={`${Styles.path} ${Styles.whitePath}`}
           d="M10 150 A 120 120 0 0 1 250 150"
           fill="none"
           stroke="url(#white-gradient)"
@@ -93,7 +93,7 @@ const ProgressMeter: React.FC<ProgressMeterProps> = ({
         {/* Actual progress bar with gradient */}
         <path
           data-testid="actual-path"
-          className={`${Styles.path} ${Styles[size]}`}
+          className={`${Styles.path} ${size === 'large' ? Styles.large : ''}`}
           d="M10 150 A 120 120 0 0 1 250 150"
           fill="none"
           stroke={`url(#${gradientId})`}
