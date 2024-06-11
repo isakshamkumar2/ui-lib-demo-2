@@ -11,16 +11,16 @@ export interface ProgressMeterProps {
   size?: 'default' | 'large';
 }
 
-export enum ProgressMeterSize {
-  DEFAULT = 'default',
-  LARGE = 'large',
-}
+// export enum ProgressMeterSize {
+//   DEFAULT = 'default',
+//   LARGE = 'large',
+// }
 
 const ProgressMeter: React.FC<ProgressMeterProps> = ({
   progress = 70,
   progressSubtitles,
   isNegative = false,
-  size = ProgressMeterSize.DEFAULT,
+  size = "default",
 }) => {
   const progressTitles = ['None', 'Medium', 'High'];
   const strokeDashoffset = progress ? 380 - (progress / 100) * 380 : 380;
