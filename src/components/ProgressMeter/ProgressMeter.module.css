@@ -5,7 +5,7 @@
   background-color: transparent;
   position: relative;
   margin-bottom: 1rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .outerBar {
@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .innerBar {
@@ -73,12 +73,12 @@
 .largeProgressContainer{
   width: 109px;
   height: 100px;
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 .largeOuterBar{
   width: 100px;
   height: 60px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .largeInnerBar{
   width: 80px;
