@@ -1,6 +1,6 @@
 {
   "name": "@isakshamkumar2/ui-lib-demo-2",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "UI Library",
   "main": "dist/bundle.js",
   "module": "dist/bundle.js",
