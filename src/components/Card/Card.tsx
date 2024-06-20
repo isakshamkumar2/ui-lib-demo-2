@@ -72,7 +72,7 @@ const Card: React.FC<CardProps> = ({
     &:focus {
       outline: none;
       border: 1px solid ${themes.light.primaryColor};
-       box-sizing: border-box; 
+      
     }
     &:hover {
       box-shadow: 0 0 8px ${themes.light.primaryColor};
