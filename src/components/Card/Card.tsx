@@ -43,7 +43,7 @@ export type CardProps = {
   width?: CardWidth;
   /** Theme to be applied to the card. */
   theme?: ThemeType;
-  /** If true, the card will have an outline. */
+  /** If true, the card will have an outline on focus. */
   outline?: boolean;
   /** Additional styles to be applied to the card. */
   style?: CSSProperties;
@@ -68,17 +68,16 @@ const Card: React.FC<CardProps> = ({
     background-color: ${props =>
       props.theme === 'light' ? themes.dark.onPrimary : themes.dark.onSurface};
     border: ${props =>
-      `1px solid ${outline ? themes.light.primaryColor : 'none'}`};
+      `1px solid ${outline ? themes.light.primaryColor : 'transparent'}`};
     &:focus {
       outline: none;
       border: 1px solid ${themes.light.primaryColor};
-      box-sizing:border-box;
-      
     }
     &:hover {
       box-shadow: 0 0 8px ${themes.light.primaryColor};
       transition: box-shadow 0.2s ease-in-out;
     }
+
   `;
   
   const CardContainerClasses = `${Styles['cardContainer']} ${Styles[height]} ${Styles[width]}`;

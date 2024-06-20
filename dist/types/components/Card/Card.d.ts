@@ -37,7 +37,7 @@ export type CardProps = {
     width?: CardWidth;
     /** Theme to be applied to the card. */
     theme?: ThemeType;
-    /** If true, the card will have an outline. */
+    /** If true, the card will have an outline on focus. */
     outline?: boolean;
     /** Additional styles to be applied to the card. */
     style?: CSSProperties;
